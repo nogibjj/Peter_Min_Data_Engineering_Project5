@@ -12,11 +12,8 @@ jobs:
       - name: Install packages
         run: make install
         
-      - name: Format the code
-        run: make format
-
-      - name: Lint the code
-        run: make lint
+      - name: Refactor the code
+        run: make refactor
 
       - name: Run tests on the main Python file
         run: make test

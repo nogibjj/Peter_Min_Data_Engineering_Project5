@@ -5,17 +5,33 @@ format:
 	black *.py
 
 lint:
-	pylint --disable=R,C --ignore-patterns=test_.*?py *.py
+	ruff check *.py mylib/*.py
 
 test:
-	python -m pytest -cov=main test_main.py
+	python -m pytest -vv --cov=main --cov=mylib test_*.py
 
 all: install format lint test
 
+refactor: format lint
+
 generate:
-	python main.py
-	git config --local user.email "action@github.com"; \
-	git config --local user.name "GitHub Action"; \
-	git add .
-	git commit -m "Test"
-	git push
+	python test_main.py
+
+	@if [ -n "$$(git status --porcelain)" ]; then \
+		git config --local user.email "action@github.com"; \
+		git config --local user.name "GitHub Action"; \
+		git add .; \
+		git commit -m "Add SQL log"; \
+		git push; \
+	else \
+		echo "No changes to commit. Skipping commit and push."; \
+	fi
+
+extract:
+	python main.py extract
+
+transform_load:
+	python main.py transform_load
+
+query:
+	python main.py general_query "SELECT major_category FROM GradEmployment WHERE major_category LIKE 'Computer%';"
