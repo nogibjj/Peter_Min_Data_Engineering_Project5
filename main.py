@@ -8,7 +8,7 @@ from mylib.query import (
     create_record,
     update_record,
     delete_record,
-    read_record
+    read_record,
 )
 
 
@@ -101,21 +101,55 @@ def main():
     elif args.action == "update_record":
         update_record(
             args.record_id,
-            args.major_code, args.major, args.major_category, args.grad_total, args.grad_sample_size,
-            args.grad_employed, args.grad_full_time_year_round, args.grad_unemployed, args.grad_unemployment_rate, args.grad_median,
-            args.grad_P25, args.grad_P75, args.nongrad_total, args.nongrad_employed, args.nongrad_full_time_year_round,
-            args.nongrad_unemployed, args.nongrad_unemployment_rate, args.nongrad_median, args.nongrad_P25, args.nongrad_P75,
-            args.grad_share, args.grad_premium
+            args.major_code,
+            args.major,
+            args.major_category,
+            args.grad_total,
+            args.grad_sample_size,
+            args.grad_employed,
+            args.grad_full_time_year_round,
+            args.grad_unemployed,
+            args.grad_unemployment_rate,
+            args.grad_median,
+            args.grad_P25,
+            args.grad_P75,
+            args.nongrad_total,
+            args.nongrad_employed,
+            args.nongrad_full_time_year_round,
+            args.nongrad_unemployed,
+            args.nongrad_unemployment_rate,
+            args.nongrad_median,
+            args.nongrad_P25,
+            args.nongrad_P75,
+            args.grad_share,
+            args.grad_premium,
         )
     elif args.action == "delete_record":
         delete_record(args.record_id)
     elif args.action == "create_record":
         create_record(
-            args.major_code, args.major, args.major_category, args.grad_total, args.grad_sample_size,
-            args.grad_employed, args.grad_full_time_year_round, args.grad_unemployed, args.grad_unemployment_rate, args.grad_median,
-            args.grad_P25, args.grad_P75, args.nongrad_total, args.nongrad_employed, args.nongrad_full_time_year_round,
-            args.nongrad_unemployed, args.nongrad_unemployment_rate, args.nongrad_median, args.nongrad_P25, args.nongrad_P75,
-            args.grad_share, args.grad_premium
+            args.major_code,
+            args.major,
+            args.major_category,
+            args.grad_total,
+            args.grad_sample_size,
+            args.grad_employed,
+            args.grad_full_time_year_round,
+            args.grad_unemployed,
+            args.grad_unemployment_rate,
+            args.grad_median,
+            args.grad_P25,
+            args.grad_P75,
+            args.nongrad_total,
+            args.nongrad_employed,
+            args.nongrad_full_time_year_round,
+            args.nongrad_unemployed,
+            args.nongrad_unemployment_rate,
+            args.nongrad_median,
+            args.nongrad_P25,
+            args.nongrad_P75,
+            args.grad_share,
+            args.grad_premium,
         )
     elif args.action == "general_query":
         general_query(args.query)
