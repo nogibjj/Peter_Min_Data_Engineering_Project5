@@ -14,6 +14,15 @@ jobs:
         
       - name: Refactor the code
         run: make refactor
+      
+      - name: Run Extract Process
+        run: make extract
+      
+      - name: Run Transform-Load Process
+        run: make transform_load
+      
+      - name: Run Query Test
+        run: make query
 
       - name: Run tests on the main Python file
         run: make test

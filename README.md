@@ -1,5 +1,5 @@
 # Mini_Project_5
-
+[![CI/CD Pipeline](https://github.com/nogibjj/Peter_Min_Data_Engineering_Project5/actions/workflows/cicd.yml/badge.svg)](https://github.com/nogibjj/Peter_Min_Data_Engineering_Project5/actions/workflows/cicd.yml)
 
 This is the README for my Mini Project 5 for the IDS706 - Data Engineering Systems class at Duke University.
 
@@ -14,4 +14,5 @@ The dataset comes from FiveThirtyEight, an election polls, politics, and analysi
 2. Read: `python main.py read_record`
 3. Update: `python main.py update_record 1 ...` updates record with id of 1 followed by 22 arguments
 4. Delete: `python main.py delete_record 1` deletes record with id of 1
+
 For the 22 arguments, please refer to the specified dataset above.
